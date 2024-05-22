@@ -1,59 +1,88 @@
-<script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+<script lang="ts">
+  import NavBar from "$lib/components/nav-bar.svelte";
+  import waterfall from "$lib/images/waterfall.jpg";
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+  <title>Home</title>
+  <meta name="description" content="David's Portfolio" />
 </svelte:head>
 
+<div class="hero-img"></div>
+
+<header>
+  <h1>David Thompson</h1>
+  <h2>Software Developer/Photographer</h2>
+  <NavBar />
+</header>
 <section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
+  <div class="profile-circle">
+    <img src="$lib/images/profile.jpg" alt="David Thompson" />
+  </div>
+  <p>Welcome to my portfolio!</p>
+  <p>
+    I'm David Thompson. I'm a software developer and photographer. I love
+    creating things and solving problems. I'm always looking for new
+    opportunities to learn and grow.
+  </p>
 </section>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
+  .hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 80vh;
+    width: 100%;
+    object-fit: contain;
+    /* We are going to have a gradient overlay */
+    background-image: linear-gradient(
+        180deg,
+        rgba(11, 29, 40, 1) 0%,
+        rgba(46, 62, 70, 0.716) 14%,
+        rgba(31, 69, 88, 0.3275911048012955) 21%,
+        rgba(43, 75, 91, 0.2191877434567577) 50%,
+        rgba(54, 81, 94, 0.4732493681066176) 64%,
+        rgba(64, 86, 96, 0.6029412448573179) 76%,
+        rgba(69, 89, 97, 0.8813726174063375) 82%,
+        rgba(74, 91, 98, 0.8869748583026961) 87%,
+        rgba(77, 93, 99, 0.9401961468181023) 91%,
+        rgba(84, 97, 101, 1) 100%
+      ),
+      url($lib/images/waterfall.jpg);
+    background-size: cover;
+  }
 
-	h1 {
-		width: 100%;
-	}
+  header {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
 
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
+    align-items: center;
+    flex: 0.6;
+    width: 100%;
+  }
 
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
+  section {
+    z-index: 100;
+  }
+  h1 {
+    width: 100%;
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-kerning: auto;
+    letter-spacing: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    width: 100%;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-kerning: auto;
+    text-align: center;
+    margin-top: 1rem;
+  }
 </style>
