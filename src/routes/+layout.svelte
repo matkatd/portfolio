@@ -37,10 +37,7 @@
     justify-content: center;
     align-items: center;
     padding: 12px;
-  }
-
-  footer a {
-    font-weight: bold;
+    background-color: var(--color-theme-2);
   }
 
   @media (min-width: 480px) {

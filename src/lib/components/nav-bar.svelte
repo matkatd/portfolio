@@ -15,7 +15,7 @@
 <style>
   :root {
     --color-text: rgb(247, 244, 244);
-    --color-text-hover: #37a656;
+    --color-text-hover: rgb(163, 255, 232);
   }
   nav {
     display: flex;
@@ -62,6 +62,7 @@
   }
   a:hover {
     color: var(--color-text-hover);
+    background-color: var(--color-theme-2) 70%;
   }
 
   a.after:after {
