@@ -29,6 +29,7 @@
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
+    font-size: calc(15px + 0.390625vw);
   }
 
   footer {

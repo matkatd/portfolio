@@ -5,9 +5,9 @@
   <hr />
   <ul>
     <li><a class="animate after" href="/about">About</a></li>
-    <li><a class="animate after" href="/blog">Blog</a></li>
     <li><a class="animate after" href="/projects">Projects</a></li>
     <li><a class="animate after" href="/photography">Photography</a></li>
+    <li><a class="animate after" href="/blog">Blog</a></li>
   </ul>
   <hr />
 </nav>
@@ -20,32 +20,40 @@
   nav {
     display: flex;
     flex-direction: column;
-
+    /* flex-wrap: wrap; */
+    justify-content: center;
     align-items: center;
-    padding: 1rem;
+    /* padding: 1rem; */
     width: 100%;
     max-width: 64rem;
     margin: 0 auto;
-    box-sizing: border-box;
+    overflow: hidden;
   }
 
   hr {
     width: 100%;
     border: 0;
-    border-top: 1px solid var(--color-bg-1);
+    border-top: 2px solid var(--color-bg-1);
   }
 
   ul {
-    display: flex;
+    display: grid;
     width: 100%;
-    justify-content: space-around;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    justify-content: center;
+    justify-items: center;
     list-style-type: none;
     padding: 0;
+    li {
+      margin: 0;
+      min-width: 0;
+      text-align: center;
+      width: fit-content;
+      text-transform: uppercase;
+    }
   }
-
-  li {
-    margin: 0;
-    text-transform: uppercase;
+  a {
+    font-size: 1.5rem;
   }
 
   a,
@@ -57,7 +65,7 @@
     position: relative;
     transition: 0.5s color ease;
     text-decoration: none;
-    font-size: 1.5rem;
+
     color: var(--color-text);
   }
   a:hover {
@@ -88,9 +96,14 @@
     width: 100%;
   }
 
-  @media (min-width: 480px) {
-    nav {
-      padding: 1rem 0;
+  @media (max-width: 740px) {
+    ul {
+      grid-template-columns: 1fr 1fr;
+      width: auto;
+      gap: 1.25rem;
+      a {
+        font-size: 1.25rem;
+      }
     }
   }
 </style>

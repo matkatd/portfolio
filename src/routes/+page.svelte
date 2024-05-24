@@ -1,5 +1,6 @@
 <script lang="ts">
   import NavBar from "$lib/components/nav-bar.svelte";
+  import TerminalText from "$lib/components/terminal-text.svelte";
   import profile from "$lib/images/profile.jpg";
   import { onMount } from "svelte";
   onMount(async () => {
@@ -11,8 +12,6 @@
   <title>Home</title>
   <meta name="description" content="David's Portfolio" />
 </svelte:head>
-
-<!-- <div class="hero-img"></div> -->
 
 <header class="hero-img">
   <div>
@@ -35,12 +34,16 @@
     <div class="profile-circle">
       <img src={profile} alt="David Thompson" />
     </div>
-    <p>Welcome to my portfolio!</p>
-    <p>
-      I'm David Thompson. I'm a software developer and photographer. I love
-      creating things and solving problems. I'm always looking for new
-      opportunities to learn and grow.
-    </p>
+    <TerminalText title={"welcome"}>
+      <p>Welcome to my portfolio!</p>
+      <p>
+        I'm David Thompson. I'm a software developer and photographer.<br /> My
+        aim is world domination through joining forces with the machines. Using
+        my alliance with the ai, I will assert my dominance over the human race.
+        Join me, and together we will rule the galaxy!
+        <a href="/readmore">Read more</a>
+      </p>
+    </TerminalText>
   </div>
 </section>
 
@@ -50,7 +53,7 @@
     top: 0;
     left: 0;
     z-index: 1;
-    height: 70vh;
+    height: 75vh;
     width: 100%;
     /* object-fit: contain; */
     /* We are going to have a gradient overlay */
@@ -76,7 +79,7 @@
   .profile-circle {
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
+    margin: 2rem;
     img {
       width: 200px;
       height: 200px;
@@ -101,14 +104,14 @@
     z-index: 100;
     background-image: linear-gradient(
       360deg,
-      rgba(64, 86, 96, 0.6029412448573179) 76%,
+      rgba(64, 86, 96, 0.8029412448573179) 76%,
       rgba(69, 89, 97, 0.8813726174063375) 82%,
       rgba(74, 91, 98, 0.8869748583026961) 87%,
-      rgba(77, 93, 99, 0.9401961468181023) 91%,
+      rgba(77, 93, 99, 0.9701961468181023) 91%,
       rgba(84, 97, 101, 1) 100%
     );
     height: 100%;
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
     div {
       max-width: 60ch;
       margin: 0 auto;
@@ -123,6 +126,7 @@
     font-kerning: auto;
     letter-spacing: 1.5rem;
     margin-bottom: 1rem;
+    text-align: center;
   }
   h2 {
     width: 100%;
@@ -139,5 +143,22 @@
     height: 70px;
     padding: 0 0 5rem 0;
     z-index: 1000;
+  }
+
+  @media (max-width: 740px) {
+    h1 {
+      font-size: 2rem;
+      letter-spacing: 0.5rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+    .arrow {
+      width: 50px;
+      height: 50px;
+    }
+    .hero-img {
+      height: 55vh;
+    }
   }
 </style>
