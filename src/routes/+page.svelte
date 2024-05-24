@@ -41,7 +41,7 @@
         aim is world domination through joining forces with the machines. Using
         my alliance with the ai, I will assert my dominance over the human race.
         Join me, and together we will rule the galaxy!
-        <a href="/readmore">Read more</a>
+        <a href="/about">Read more</a>
       </p>
     </TerminalText>
   </div>
