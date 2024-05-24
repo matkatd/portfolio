@@ -18,7 +18,12 @@
     flex-direction: column;
     min-height: 100vh;
     background-color: var(--color-bg-0);
-    background-image: url("$lib/images/topography.svg");
+    background-image: linear-gradient(
+        90deg,
+        rgba(74, 91, 98, 0.6869748583026961) 0%,
+        rgba(74, 91, 98, 0.6869748583026961) 100%
+      ),
+      url("$lib/images/topography.svg");
     background-repeat: repeat;
   }
 
