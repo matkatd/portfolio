@@ -23,9 +23,6 @@ importers:
       '@lottiefiles/svelte-lottie-player':
         specifier: ^0.3.1
         version: 0.3.1
-      svelte-lottie-player:
-        specifier: link:@types/lottiefiles/svelte-lottie-player
-        version: link:@types/lottiefiles/svelte-lottie-player
     devDependencies:
       '@fontsource/fira-mono':
         specifier: ^5.0.13
