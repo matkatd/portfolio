@@ -111,7 +111,8 @@
       rgba(84, 97, 101, 1) 100%
     );
     height: 100%;
-    padding: 2rem 1.5rem;
+    width: 100%;
+    /* padding: 2rem 1.5rem; */
     div {
       max-width: 60ch;
       margin: 0 auto;

@@ -1,3 +1,6 @@
+<script lang="ts">
+</script>
+
 <nav>
   <ul>
     <li><a class="animate after" href="/about">About</a></li>
@@ -14,12 +17,12 @@
   }
   nav {
     display: flex;
-    flex-direction: column;
-    /* flex-wrap: wrap; */
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    /* padding: 1rem; */
-    width: 100%;
+    padding: 0 1rem 1rem 1rem;
+    /* width: 100%; */
     max-width: 64rem;
     margin: 0 auto;
     overflow: hidden;
@@ -28,7 +31,7 @@
   ul {
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: center;
     justify-items: center;
     list-style-type: none;
