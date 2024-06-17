@@ -14,7 +14,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
-    width: 60vw;
+    width: inherit;
     /* We need to make sure that all children render the same height */
 
   }

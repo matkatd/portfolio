@@ -8,7 +8,7 @@
   <div class="name-and-page">
     <br/>
     <h1><a href="/admin">David Thompson</a></h1>
-    <h2>{data.pathname.substring(1)}</h2>
+    <h2>Admin</h2>
     <br/>
   </div>
 
@@ -86,7 +86,7 @@
     align-items: center;
 
     padding: 2rem;
-    max-width: 50rem;
+
   }
 
   @media (max-width: 740px) {

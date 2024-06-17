@@ -85,7 +85,7 @@
     align-items: center;
 
     padding: 2rem;
-    max-width: 50rem;
+    max-width: 60rem;
   }
 
   @media (max-width: 740px) {

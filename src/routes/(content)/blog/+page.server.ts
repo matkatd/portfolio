@@ -5,7 +5,7 @@ export const load: PageServerLoad = async ({ params }) => {
   return {
     post: await client.projects.findMany({
       orderBy: { date: "desc" },
-      where: { NOT: { category: "other" } },
+      where: { category: "other" },
     }),
   };
 };

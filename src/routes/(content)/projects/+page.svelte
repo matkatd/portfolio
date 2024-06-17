@@ -12,3 +12,9 @@
     {/each}
   </Grid>
 </section>
+
+<style>
+  section {
+    width: 70vw;
+  }
+</style>
