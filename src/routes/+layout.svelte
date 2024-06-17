@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { slide } from "svelte/transition";
-  import "./styles.css";
+
+  import "../styles.css";
   let { data, children } = $props();
 </script>
 

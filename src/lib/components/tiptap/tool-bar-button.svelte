@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { createEventDispatcher, type Snippet, type SvelteComponent } from "svelte";
-  import type { SvelteElement } from "svelte/compiler";
+  import { type Snippet } from "svelte";
 
   interface ToolBarButtonProps   {
     title?: string;

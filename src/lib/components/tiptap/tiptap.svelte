@@ -14,6 +14,7 @@
   import CodeBlockComponent from "./code-block-component.svelte";
   import CodeBlockLowlight from "@tiptap/extension-code-block-lowlight";
   import TiptapControls from "./tiptap-controls.svelte";
+  import Stack from "../stack.svelte";
 
   const lowlight = createLowlight(common);
 
@@ -71,14 +72,20 @@
   });
 </script>
 
-{#if editor}
-  <TiptapControls {editor} />
-{/if}
+<Stack gap="2rem" flexDirection="column" backgroundColor="#e7e7e7">
+  {#if editor}
+    <TiptapControls {editor} />
+  {/if}
 
-<div bind:this={element}></div>
+  <div class="editor" bind:this={element}></div>
+</Stack>
 
 <style>
-  .tiptap {
-    background-color: white;
+  .editor {
+    background-color: rgb(245, 245, 245);
+    color: rgb(10, 10, 10);
+    border: 1px solid rgb(200, 200, 200);
+
+    border-radius: 10px;
   }
 </style>

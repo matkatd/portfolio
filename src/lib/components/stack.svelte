@@ -1,0 +1,25 @@
+<script lang="ts">
+  import { type Snippet } from "svelte";
+
+  interface StackProps {
+    children: Snippet;
+    flexDirection?: "row" | "column";
+    gap?: string;
+    backgroundColor?: string;
+    padding?: string;
+    borderRadius?: string;
+  }
+
+  const {borderRadius = "10px", padding = "1rem", backgroundColor = "none", gap = "1rem", children, flexDirection = "column" }: StackProps = $props();
+</script>
+
+<div class="stack" style:border-radius={borderRadius} style:flex-direction={flexDirection} style:gap style:background-color={backgroundColor} style:padding>
+  {@render children()}
+</div>
+ 
+<style>
+  .stack {
+    display: flex;
+
+  }
+</style>

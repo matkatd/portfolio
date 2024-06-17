@@ -1,0 +1,92 @@
+:root {
+  --toolbar-color: rgb(141, 229, 229);
+  --input-border: #8b8a8b;
+  --input-focus-h: 215;
+  --input-focus-s: 100%;
+  --input-focus-l: 42%;
+}
+
+.ProseMirror > * + * {
+  margin-top: 0.75rem;
+}
+
+.ProseMirror ul,
+.ProseMirror ol {
+  padding: 0 1rem;
+}
+
+.ProseMirror h1,
+.ProseMirror h2,
+.ProseMirror h3,
+.ProseMirror h4,
+.ProseMirror h5,
+.ProseMirror h6 {
+  line-height: 1.1;
+}
+
+.ProseMirror code {
+  background-color: rgba(#616161, 0.1);
+  color: #642385;
+}
+
+strong {
+  font-family: var(--font-header);
+}
+
+.ProseMirror pre {
+  background: #272626;
+  color: #fff;
+  font-family: "JetBrainsMono", monospace;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.ProseMirror pre code {
+  color: inherit;
+  padding: 0;
+  background: none;
+  font-size: 0.8rem;
+}
+
+.ProseMirror img {
+  /* max-width: 100%; */
+  width: 60%;
+  height: auto;
+}
+
+.ProseMirror blockquote {
+  margin-inline-start: 0;
+  padding-inline-start: 40px;
+  border-inline-start: var(--footer-color) solid 4px;
+}
+
+.ProseMirror hr {
+  border: none;
+  border-top: 2px solid var(--footer-color);
+  margin: 2rem 0;
+}
+
+.ProseMirror {
+  background-color: white;
+  min-height: 50vh;
+  padding: 5px 1rem 5px 1rem;
+  border-radius: 10px;
+  transition: 200ms all ease-in-out;
+
+  &:focus {
+    border-color: hsl(
+      var(--input-focus-h),
+      var(--input-focus-s),
+      var(--input-focus-l)
+    );
+    box-shadow: 0 0 0 3px
+      hsla(
+        var(--input-focus-h),
+        var(--input-focus-s),
+        calc(var(--input-focus-l) + 40%),
+        0.8
+      );
+    transition: 200ms all ease-in-out;
+    outline: 3px solid transparent;
+  }
+}
