@@ -24,7 +24,7 @@
   // })
 </script>
 
-<section>
+<section class="page-content">
   <h2>Photography</h2>
   <Grid>
     {#each data.post as photo}
@@ -48,10 +48,6 @@
 </section>
 
 <style>
-  section {
-    width: 70vw;
-  }
-
   .photo-card {
     position: relative;
     cursor: pointer;

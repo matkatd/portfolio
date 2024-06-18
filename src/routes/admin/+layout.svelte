@@ -85,7 +85,7 @@
     justify-content: center;
     align-items: center;
 
-    padding: 2rem;
+    width: -moz-available;
 
   }
 

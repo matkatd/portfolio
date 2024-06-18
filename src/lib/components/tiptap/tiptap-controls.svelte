@@ -97,6 +97,11 @@ type Level = 1 | 2 | 3 | 4 | 5 | 6;
         >
           <iconify-icon icon="fa6-solid:quote-left"></iconify-icon>
         </ToolBarButton>
+        <ToolBarButton title="Link" 
+          onClick={handleLinkShowButton}>
+          <iconify-icon icon="fa6-solid:link"></iconify-icon>
+        </ToolBarButton>
+
         <ToolBarButton
           title="Horizontal Rule"
           onClick={() => editor.chain().focus().setHorizontalRule().run()}

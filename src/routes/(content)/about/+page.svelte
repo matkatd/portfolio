@@ -1,4 +1,4 @@
-<section>
+<section class="page-content">
   <h1>About</h1>
   <div>
     <p>

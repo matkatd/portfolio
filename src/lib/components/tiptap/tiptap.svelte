@@ -85,7 +85,6 @@
     background-color: rgb(245, 245, 245);
     color: rgb(10, 10, 10);
     border: 1px solid rgb(200, 200, 200);
-
     border-radius: 10px;
   }
 </style>

@@ -6,14 +6,15 @@
     flexDirection?: "row" | "column";
     gap?: string;
     backgroundColor?: string;
+    width?: string;
     padding?: string;
     borderRadius?: string;
   }
 
-  const {borderRadius = "10px", padding = "1rem", backgroundColor = "none", gap = "1rem", children, flexDirection = "column" }: StackProps = $props();
+  const { width = 'auto', borderRadius = "10px", padding = "1rem", backgroundColor = "none", gap = "1rem", children, flexDirection = "column" }: StackProps = $props();
 </script>
 
-<div class="stack" style:border-radius={borderRadius} style:flex-direction={flexDirection} style:gap style:background-color={backgroundColor} style:padding>
+<div class="stack" style:width style:border-radius={borderRadius} style:flex-direction={flexDirection} style:gap style:background-color={backgroundColor} style:padding>
   {@render children()}
 </div>
  

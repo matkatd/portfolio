@@ -25,6 +25,7 @@ html {
   box-sizing: border-box;
 }
 body {
+  font-size: calc(15px + 0.390625vw);
   min-height: 100vh;
   margin: 0 auto;
   /* overflow-x: hidden; */
@@ -44,10 +45,25 @@ body {
     );
 }
 
+.page-content {
+  width: 80vw;
+}
+@media (max-width: 768px) {
+  .page-content {
+    width: 90vw;
+  }
+}
+
 /* Basic editor styles */
 .tiptap {
   :first-child {
     margin-top: 0;
+  }
+
+  @media (max-width: 768px) {
+    .tiptap {
+      width: 100vw;
+    }
   }
 
   pre {

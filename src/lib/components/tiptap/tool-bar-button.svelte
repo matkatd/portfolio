@@ -64,9 +64,9 @@
   .front {
     display: block;
     position: relative;
-    padding: 12px 42px;
+    padding: calc(15px + 0.350625vw) calc(25px + 0.750625vw);
     border-radius: 12px;
-    font-size: 1.25rem;
+    font-size: calc(10px + 0.350625vw);
     color: white;
     background: var(--color-theme-2);
     will-change: transform;

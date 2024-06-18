@@ -72,10 +72,11 @@
   }
 
   h2 {
-    font-size: 2.75rem;
+    font-size: calc(25px + 0.950625vw);
     letter-spacing: 0.75rem;
     font-weight: 300;
     text-align: end;
+
   }
 
   .content {
@@ -83,9 +84,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     padding: 2rem;
-    max-width: 60rem;
+    width: 100%;
   }
 
   @media (max-width: 740px) {

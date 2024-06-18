@@ -4,7 +4,7 @@
   let { data } = $props();
 </script>
 
-<section>
+<section class="page-content">
   <h2>Projects</h2>
   <Grid>
     {#each data.post as project}
@@ -14,7 +14,4 @@
 </section>
 
 <style>
-  section {
-    width: 70vw;
-  }
 </style>
