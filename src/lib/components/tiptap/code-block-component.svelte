@@ -1,22 +1,22 @@
 <script lang="ts">
-  import type { NodeViewProps } from "@tiptap/core";
+  import type { NodeViewProps } from '@tiptap/core'
 
-  import { NodeViewContent, NodeViewWrapper } from "svelte-tiptap";
+  import { NodeViewContent, NodeViewWrapper } from 'svelte-tiptap'
 
   let {
     attrs,
     updateAttributes,
     extension,
   }: {
-    attrs: NodeViewProps["node"]["attrs"];
-    updateAttributes: NodeViewProps["updateAttributes"];
-    extension: any;
-  } = $props();
+    attrs: NodeViewProps['node']['attrs']
+    updateAttributes: NodeViewProps['updateAttributes']
+    extension: any
+  } = $props()
 
   const handleChange = (event: Event) => {
-    const selectedLanguage = (event.target as HTMLSelectElement).value;
-    updateAttributes({ language: selectedLanguage });
-  };
+    const selectedLanguage = (event.target as HTMLSelectElement).value
+    updateAttributes({ language: selectedLanguage })
+  }
 </script>
 
 <NodeViewWrapper class="code-block">

@@ -1,12 +1,12 @@
-@import "@fontsource/ubuntu-mono";
-@import "@fontsource/ubuntu/400.css";
-@import "@fontsource/ubuntu/300.css";
-@import "@fontsource/ubuntu/500.css";
+@import '@fontsource/ubuntu-mono';
+@import '@fontsource/ubuntu/400.css';
+@import '@fontsource/ubuntu/300.css';
+@import '@fontsource/ubuntu/500.css';
 
 :root {
-  --font-body: Ubuntu, Arial, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  --font-mono: "ubuntu Mono", monospace;
+  --font-body: Ubuntu, Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: 'ubuntu Mono', monospace;
   --color-bg-0: #546165;
   --color-bg-1: hsl(209, 12%, 58%);
   --color-bg-2: hsl(225, 18%, 82%);
@@ -70,7 +70,7 @@ body {
     background: var(--black);
     border-radius: 0.5rem;
     color: var(--white);
-    font-family: "JetBrainsMono", monospace;
+    font-family: 'JetBrainsMono', monospace;
     margin: 1.5rem 0;
     padding: 0.75rem 1rem;
 

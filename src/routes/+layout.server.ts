@@ -1,4 +1,4 @@
 export const load = ({ url }) => {
-  const { pathname } = url;
-  return { pathname: pathname };
-};
+  const { pathname } = url
+  return { pathname: pathname }
+}

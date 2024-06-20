@@ -66,7 +66,7 @@
   }
 
   a.after:after {
-    content: "";
+    content: '';
     transition: 0.5s all ease;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;

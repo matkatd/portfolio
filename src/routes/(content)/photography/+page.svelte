@@ -1,17 +1,17 @@
 <script lang="ts">
-  import { env } from "$env/dynamic/public";
-  import Grid from "$lib/components/grid.svelte";
-  import type { Photography } from "@prisma/client";
+  import { env } from '$env/dynamic/public'
+  import Grid from '$lib/components/grid.svelte'
+  import type { Photography } from '@prisma/client'
 
-  import { Lightbox } from "svelte-lightbox";
+  import { Lightbox } from 'svelte-lightbox'
 
   let {
     data,
   }: {
     data: {
-      post: Photography[];
-    };
-  } = $props();
+      post: Photography[]
+    }
+  } = $props()
 
   // let bp = BiggerPicture({
   //   gallery: true,

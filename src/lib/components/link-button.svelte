@@ -1,22 +1,20 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
+  import type { Snippet } from 'svelte'
 
-  let { href, children }: {href: string, children: Snippet} = $props();
+  let { href, children }: { href: string; children: Snippet } = $props()
 </script>
 
-<a href={href} class="button" >
-
-   {@render children()}
-
+<a {href} class="button">
+  {@render children()}
 </a>
 
 <style>
   .button {
     display: inline-block;
     padding: 1rem;
-    margin: 0.5rem ;
+    margin: 0.5rem;
     border-radius: 0.5rem;
-    background-color: #377EA6;
+    background-color: #377ea6;
     color: #eceaea;
     text-decoration: none;
     /* font-family: var(--font-mono); */
@@ -28,5 +26,4 @@
       transition: background-color 0.2s;
     }
   }
-
 </style>

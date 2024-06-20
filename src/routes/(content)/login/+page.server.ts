@@ -1,35 +1,35 @@
-import { lucia } from "$lib/server/auth";
-import { client } from "$lib/server/db.server";
-import { redirect, type Actions } from "@sveltejs/kit";
-import { fail, superValidate } from "sveltekit-superforms";
-import { yup } from "sveltekit-superforms/adapters";
-import { object, string } from "yup";
-import type { PageServerLoad } from "./$types";
+import { lucia } from '$lib/server/auth'
+import { client } from '$lib/server/db.server'
+import { redirect, type Actions } from '@sveltejs/kit'
+import { fail, superValidate } from 'sveltekit-superforms'
+import { yup } from 'sveltekit-superforms/adapters'
+import { object, string } from 'yup'
+import type { PageServerLoad } from './$types'
 
 const schema = object({
-  username: string().required("Username is required"),
-  password: string().required("Password is required"),
-});
+  username: string().required('Username is required'),
+  password: string().required('Password is required'),
+})
 
 export const load: PageServerLoad = async () => {
-  const form = await superValidate(yup(schema));
+  const form = await superValidate(yup(schema))
 
-  return { form };
-};
+  return { form }
+}
 
 export const actions: Actions = {
   default: async (event) => {
-    const form = await superValidate(event.request, yup(schema));
+    const form = await superValidate(event.request, yup(schema))
 
     if (!form.valid) {
-      return fail(400, { form });
+      return fail(400, { form })
     }
 
     const existingUser = await client.user.findUnique({
       where: {
         username: form.data.username.toLowerCase(),
       },
-    });
+    })
 
     if (!existingUser) {
       // NOTE:
@@ -42,17 +42,17 @@ export const actions: Actions = {
       // it is crucial your implementation is protected against brute-force attacks with login throttling etc.
       // If usernames are public, you may outright tell the user that the username is invalid.
       return fail(400, {
-        message: "Incorrect username or password",
-      });
+        message: 'Incorrect username or password',
+      })
     }
 
-    const session = await lucia.createSession(existingUser.id, {});
-    const sessionCookie = lucia.createSessionCookie(session.id);
+    const session = await lucia.createSession(existingUser.id, {})
+    const sessionCookie = lucia.createSessionCookie(session.id)
     event.cookies.set(sessionCookie.name, sessionCookie.value, {
-      path: ".",
+      path: '.',
       ...sessionCookie.attributes,
-    });
+    })
 
-    redirect(302, "/admin");
+    redirect(302, '/admin')
   },
-};
+}

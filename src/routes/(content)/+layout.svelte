@@ -1,14 +1,14 @@
 <script lang="ts">
-  import ContentNavBar from "$lib/components/content-nav-bar.svelte";
-  let { data, children } = $props();
+  import ContentNavBar from '$lib/components/content-nav-bar.svelte'
+  let { data, children } = $props()
 </script>
 
 <header>
   <div class="name-and-page">
-    <br/>
+    <br />
     <h1><a href="/">David Thompson</a></h1>
     <h2>{data.pathname.substring(1)}</h2>
-    <br/>
+    <br />
   </div>
 
   <ContentNavBar />
@@ -30,7 +30,7 @@
     /* background-color: rgba(53, 40, 23, 0.36); */
     background-image: linear-gradient(
         180deg,
-        rgba(11, 29, 40, .8) 0%,
+        rgba(11, 29, 40, 0.8) 0%,
         rgba(46, 62, 70, 0.616) 14%,
         rgba(31, 69, 88, 0.3275911048012955) 21%,
         rgba(43, 75, 91, 0.2191877434567577) 50%,
@@ -40,11 +40,12 @@
         rgba(74, 91, 98, 0.4869748583026961) 87%,
         rgba(77, 93, 99, 0.9401961468181023) 91%,
         rgba(84, 97, 101, 1) 100%
-      ), url("$lib/images/sunset.jpg");
-      background-size: cover;
+      ),
+      url('$lib/images/sunset.jpg');
+    background-size: cover;
     /* We want the image just a tad up */
     background-position: center 50%;
-    
+
     .name-and-page {
       display: grid;
       grid-template-columns: 1fr 2fr 2fr 1fr;
@@ -76,7 +77,6 @@
     letter-spacing: 0.75rem;
     font-weight: 300;
     text-align: end;
-
   }
 
   .content {
@@ -92,17 +92,18 @@
     header {
       .name-and-page {
         display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      width: auto;
-      flex-wrap: wrap;
-      h1, h2 {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         text-align: center;
-        margin: 0.5rem;
+        width: auto;
+        flex-wrap: wrap;
+        h1,
+        h2 {
+          text-align: center;
+          margin: 0.5rem;
+        }
       }
-    }
     }
   }
 </style>

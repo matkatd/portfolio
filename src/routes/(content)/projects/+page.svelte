@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Grid from "$lib/components/grid.svelte";
-  import ProjectCard from "$lib/components/project-card.svelte";
-  let { data } = $props();
+  import Grid from '$lib/components/grid.svelte'
+  import ProjectCard from '$lib/components/project-card.svelte'
+  let { data } = $props()
 </script>
 
 <section class="page-content">

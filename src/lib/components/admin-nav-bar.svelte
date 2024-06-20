@@ -1,12 +1,14 @@
 <script lang="ts">
-  import { enhance } from "$app/forms";
+  import { enhance } from '$app/forms'
 </script>
 
 <nav>
   <ul>
     <li><a class="animate after" href="/admin/about">About</a></li>
     <li><a class="animate after" href="/admin/projects">Projects</a></li>
-    <li><a class="animate after" href="/admin/photography">Photography</a></li>
+    <li>
+      <a class="animate after" href="/admin/photography">Photography</a>
+    </li>
     <li><a class="animate after" href="/admin/blog">Blog</a></li>
     <li><form method="post" use:enhance><button>Logout</button></form></li>
   </ul>
@@ -86,7 +88,7 @@
   }
 
   a.after:after {
-    content: "";
+    content: '';
     transition: 0.5s all ease;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;

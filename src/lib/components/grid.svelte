@@ -1,9 +1,8 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
+  import type { Snippet } from 'svelte'
 
-  let { children }: {children: Snippet} = $props();
+  let { children }: { children: Snippet } = $props()
 </script>
-
 
 <div class="grid">
   {@render children()}
@@ -16,6 +15,5 @@
     gap: 2rem;
     width: inherit;
     /* We need to make sure that all children render the same height */
-
   }
 </style>

@@ -36,7 +36,7 @@ strong {
 .ProseMirror pre {
   background: #272626;
   color: #fff;
-  font-family: "JetBrainsMono", monospace;
+  font-family: 'JetBrainsMono', monospace;
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
 }

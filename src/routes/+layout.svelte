@@ -1,19 +1,16 @@
 <script lang="ts">
-
-  import "../styles.css";
-  let { data, children } = $props();
+  import '../styles.css'
+  let { data, children } = $props()
 </script>
 
 <div class="app">
-
-  <main >{@render children()}</main>
-
+  <main>{@render children()}</main>
 
   <footer>
     <p>© 2024 David Thompson</p>
   </footer>
 </div>
- 
+
 <style>
   .app {
     display: flex;
@@ -22,15 +19,15 @@
     background-color: var(--color-bg-0);
     justify-content: center;
     background-image: linear-gradient(
-      180deg,
+        180deg,
         rgba(84, 97, 101, 1) 0%,
         rgba(84, 97, 101, 1) 10%,
-        rgba(84, 97, 101, .9) 24%,
+        rgba(84, 97, 101, 0.9) 24%,
         rgba(84, 97, 101, 0.7732493681066176) 36%,
         rgba(69, 89, 97, 0.7813726174063375) 50%,
         rgba(74, 91, 98, 0.769748583026961) 100%
       ),
-      url("$lib/images/topography.svg");
+      url('$lib/images/topography.svg');
     background-repeat: repeat;
   }
 

@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { superForm } from "sveltekit-superforms";
+  import { superForm } from 'sveltekit-superforms'
 
-  let { data } = $props();
+  let { data } = $props()
 
-  const { form, errors, constraints, message, enhance } = superForm(data.form);
+  const { form, errors, constraints, message, enhance } = superForm(data.form)
 </script>
 
 <h1>Login</h1>
@@ -18,7 +18,7 @@
       id="username"
       name="username"
       required
-      aria-invalid={$errors.username ? "true" : undefined}
+      aria-invalid={$errors.username ? 'true' : undefined}
       bind:value={$form.username}
       {...$constraints.username}
     /><br />
@@ -33,7 +33,7 @@
       name="password"
       id="password"
       required
-      aria-invalid={$errors.password ? "true" : undefined}
+      aria-invalid={$errors.password ? 'true' : undefined}
       bind:value={$form.password}
       {...$constraints.password}
     /><br />

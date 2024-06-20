@@ -1,6 +1,6 @@
 <script lang="ts">
-  import "./tiptap.css";
-  import Tiptap from "$lib/components/tiptap/tiptap.svelte";
+  import './tiptap.css'
+  import Tiptap from '$lib/components/tiptap/tiptap.svelte'
 </script>
 
 <section class="page-content">

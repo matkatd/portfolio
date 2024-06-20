@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
+  import type { Snippet } from 'svelte'
 
-  let { children, title }: {children: Snippet, title: string} = $props();
+  let { children, title }: { children: Snippet; title: string } = $props()
 </script>
 
 <div class="terminal">
@@ -73,7 +73,7 @@
     }
     &.green {
       background-color: #4caf50;
-      
+
       &:hover {
         background-color: #1e8021;
         transition: background-color 0.2s ease-in-out;
