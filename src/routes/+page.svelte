@@ -36,13 +36,14 @@
       </div>
       <TerminalText title={'welcome'}>
          <p>Welcome to my portfolio!</p>
+         <p>I'm David Thompson. I'm a software developer and photographer.</p>
          <p>
-            I'm David Thompson. I'm a software developer and photographer.<br />
-            My aim is world domination through joining forces with the machines.
-            Using my alliance with the ai, I will assert my dominance over the human
-            race. Join me, and together we will rule the galaxy!
-            <a href="/about">Read more</a>
+            Creation is my passion. I love to create things that are both
+            beautiful and functional, though not alway at the same time.
+            Throughout this site you'll find some of my work and learn a little
+            bit about me.
          </p>
+         <p><a href="/about">Read more</a></p>
       </TerminalText>
    </div>
 </section>
