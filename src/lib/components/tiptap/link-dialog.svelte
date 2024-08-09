@@ -1,45 +1,69 @@
 <script lang="ts">
    import type { Editor } from '@tiptap/core'
+   import Modal from 'flowbite-svelte/Modal.svelte'
 
    let { showModal, editor }: { showModal: boolean; editor: Editor } = $props()
-   let dialog = $state<HTMLDialogElement>()
+   let dialog = $state<HTMLFormElement>()
    let href = $state(editor.getAttributes('link').href ?? '')
 
-   $effect(() => {
-      if (dialog && showModal) {
-         dialog.showModal()
-      }
-   })
+   // $effect(() => {
+   //    if (dialog && showModal) {
+   //       dialog.showModal()
+   //    }
+   // })
 
-   const handleCloseLinkForm = () => {
-      const returnValue = dialog?.returnValue
+   // const handleCloseLinkForm = () => {
+   //    const returnValue = dialog?.returnValue
 
-      // Common operation to focus and extend link range
-      const chain = editor.chain().focus().extendMarkRange('link')
+   //    // Common operation to focus and extend link range
+   //    const chain = editor.chain().focus().extendMarkRange('link')
 
-      if (returnValue === '' || returnValue === 'cancel') {
-         if (returnValue === '') {
-            chain.unsetLink().run()
-         }
-      } else {
-         chain.setLink({ href: returnValue ?? '' }).run()
-      }
-      showModal = false
-   }
+   //    if (returnValue === '' || returnValue === 'cancel') {
+   //       if (returnValue === '') {
+   //          chain.unsetLink().run()
+   //       }
+   //    } else {
+   //       chain.setLink({ href: returnValue ?? '' }).run()
+   //    }
+   //    showModal = false
+   // }
 
-   const handleSubmitLink = () => {
-      dialog?.close(href)
-   }
+   // const handleSubmitLink = () => {
+   //    dialog?.close(href)
+   // }
 
-   const handleRemoveLink = () => {
-      // TODO: This is not working
-      editor.chain().focus().extendMarkRange('link').unsetLink().run()
-      dialog?.setAttribute('returnValue', '')
-      dialog?.close(dialog.returnValue)
-   }
+   // const handleRemoveLink = () => {
+   //    // TODO: This is not working
+   //    editor.chain().focus().extendMarkRange('link').unsetLink().run()
+   //    dialog?.setAttribute('returnValue', '')
+   //    dialog?.close(dialog.returnValue)
+   // }
 </script>
 
-<!-- inspired by https://svelte.dev/examples/modal -->
+<Modal bind:open={showModal} size="xs" autoclose={false}>
+   <form bind:this={dialog}>
+      <label for="link">Enter URL for Link</label>
+      <input bind:value={href} type="text" id="link" />
+      <div class="dialog-buttons">
+         <button id="cancel" value="cancel" formMethod="dialog">
+            Cancel
+         </button>
+         <button
+            id="remove"
+            class="remove-button"
+            value="remove"
+            formMethod="dialog"
+         >
+            Remove Link
+         </button>
+         <button id="confirmBtn" class="confirm-button" value="default">
+            Confirm
+         </button>
+      </div>
+   </form>
+</Modal>
+
+<!-- inspired by https://svelte.dev/examples/modal
 <dialog bind:this={dialog} onclose={handleCloseLinkForm}>
    <form>
       <label for="link">Enter URL for Link</label>
@@ -110,4 +134,4 @@
          opacity: 1;
       }
    }
-</style>
+</style> -->

@@ -118,4 +118,10 @@
       font-weight: 800;
       color: var(--color-theme-1);
    }
+   img {
+      object-fit: contain;
+      align-self: start;
+      border-radius: 15px;
+      margin: 3rem 1rem;
+   }
 </style>
