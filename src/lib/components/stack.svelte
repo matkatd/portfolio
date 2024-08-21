@@ -10,9 +10,11 @@
       padding?: string
       borderRadius?: string
       margin?: string
+      border?: string
    }
 
    const {
+      border = 'none',
       width = 'auto',
       borderRadius = '10px',
       padding = '1rem',
@@ -33,6 +35,7 @@
    style:background-color={backgroundColor}
    style:padding
    style:margin
+   style:border
 >
    {@render children()}
 </div>

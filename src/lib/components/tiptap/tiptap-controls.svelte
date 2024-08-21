@@ -139,13 +139,7 @@
             >
                <iconify-icon icon="fa6-solid:align-justify"></iconify-icon>
             </ToolBarButton>
-            <ToolBarButton
-               title="Clear All Formatting"
-               onclick={() => editor.chain().focus().clearNodes().run()}
-            >
-               <iconify-icon icon="fa6-solid:ban"></iconify-icon>
-            </ToolBarButton>
-            <br />
+
             <ToolBarButton
                title="Undo"
                onclick={() => editor.chain().focus().undo().run()}

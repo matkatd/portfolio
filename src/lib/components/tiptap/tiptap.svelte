@@ -17,9 +17,10 @@
    import Stack from '../stack.svelte'
 
    const lowlight = createLowlight(common)
-
-   let element: Element | undefined
-   let editor: Editor | null
+   const { writeup }: { writeup: string } = $props()
+   console.log('writeup', writeup)
+   let element = $state<Element | undefined>(undefined)
+   let editor = $state<Editor | undefined>(undefined)
 
    onMount(() => {
       editor = new Editor({
@@ -51,14 +52,7 @@
             }),
             Image,
          ],
-         content: `
-      <h2>
-        Welcome to Tiptap
-      </h2>
-      <p>
-        This is a simple editor build with Tiptap.
-      </p>
-    `,
+         content: writeup ?? '<h2>Hello World!</h2>',
          onTransaction: () => {
             editor = editor
          },
@@ -72,6 +66,7 @@
    })
 </script>
 
+<h1>Writeup</h1>
 <Stack gap="2rem" flexDirection="column" backgroundColor="#e7e7e7">
    {#if editor}
       <TiptapControls {editor} />
