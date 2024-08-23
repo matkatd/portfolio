@@ -16,7 +16,8 @@ const schema = object({
 })
 
 export const load: PageServerLoad = async (data) => {
-   const slug = data.params.project
+   const slug = data.params.project ?? ''
+
    const project = await client.projects.findFirst({
       where: {
          slug: slug,
@@ -24,7 +25,6 @@ export const load: PageServerLoad = async (data) => {
    })
 
    const form = await superValidate(project, yup(schema))
-   console.log(form.data.writeup)
 
    return { form }
 }

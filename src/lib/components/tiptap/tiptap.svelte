@@ -18,7 +18,6 @@
 
    const lowlight = createLowlight(common)
    const { writeup }: { writeup: string } = $props()
-   console.log('writeup', writeup)
    let element = $state<Element | undefined>(undefined)
    let editor = $state<Editor | undefined>(undefined)
 
@@ -66,8 +65,8 @@
    })
 </script>
 
-<h1>Writeup</h1>
 <Stack gap="2rem" flexDirection="column" backgroundColor="#e7e7e7">
+   {console.log('editor', editor)}
    {#if editor}
       <TiptapControls {editor} />
    {/if}
