@@ -1,11 +1,41 @@
+<!-- 
+ @component
+   - This component is a button for the toolbar in the Tiptap editor.
+   
+ @example
+```svelte
+   <ToolBarButton
+      title="Block Quote"
+      onclick={() => editor.chain().focus().toggleBlockquote().run()}
+      classActive={editor.isActive('blockquote')}
+   >
+      <iconify-icon icon="fa6-solid:quote-left"></iconify-icon>
+   </ToolBarButton>
+```
+  -->
 <script lang="ts">
    import { type Snippet } from 'svelte'
 
    interface ToolBarButtonProps {
+      /**
+       * The title of the button.
+       */
       title?: string
+      /**
+       * The children of the button.
+       */
       children: Snippet
+      /**
+       * The onclick event handler.
+       */
       onclick?: () => boolean
+      /**
+       * Whether the button is active.
+       */
       classActive?: boolean
+      /**
+       * The disabled state of the button.
+       */
       disabled?: boolean
    }
 

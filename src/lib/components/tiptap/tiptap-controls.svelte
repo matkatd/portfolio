@@ -1,10 +1,21 @@
+<!-- 
+ @component
+   This component is the toolbar for the Tiptap editor.
+  -->
 <script lang="ts">
    import type { Editor } from '@tiptap/core'
    import 'iconify-icon'
    import ToolBarButton from './tool-bar-button.svelte'
    import LinkToolbarButton from './link-toolbar-button.svelte'
 
-   const { editor }: { editor: Editor } = $props()
+   const {
+      editor,
+   }: {
+      /**
+       * Reference to the Tiptap editor instance
+       */
+      editor: Editor
+   } = $props()
    /**
     * The heading level options.
     */

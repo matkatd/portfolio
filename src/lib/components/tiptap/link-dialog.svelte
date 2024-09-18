@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
    import type { Editor } from '@tiptap/core'
    import { Modal } from 'flowbite-svelte'
 
@@ -68,7 +68,7 @@
          </button>
       </div>
    </form>
-</Modal>
+</Modal> -->
 
 <!-- inspired by https://svelte.dev/examples/modal
 <dialog bind:this={dialog} onclose={handleCloseLinkForm}>

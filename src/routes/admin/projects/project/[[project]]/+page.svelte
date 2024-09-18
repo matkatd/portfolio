@@ -53,7 +53,6 @@
             id="img"
             type="file"
             placeholder="Image"
-            bind:value={$form.img}
             {...$constraints.img}
          />
          {#if $errors.img}

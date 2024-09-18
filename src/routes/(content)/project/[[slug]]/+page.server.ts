@@ -1,0 +1,10 @@
+import { client } from '$lib/server/db.server'
+import type { PageServerLoad } from './$types'
+
+export const load: PageServerLoad = async (data) => {
+   return {
+      post: await client.projects.findFirst({
+         where: { slug: data.params.slug },
+      }),
+   }
+}

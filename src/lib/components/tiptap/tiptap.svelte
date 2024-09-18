@@ -1,3 +1,8 @@
+<!-- 
+@component
+This component is a wrapper around the Tiptap editor.
+
+ -->
 <script lang="ts">
    import { Editor } from '@tiptap/core'
    import CodeBlock from '@tiptap/extension-code-block'
@@ -17,12 +22,26 @@
    import Stack from '../stack.svelte'
 
    const lowlight = createLowlight(common)
-   const { writeup }: { writeup: string } = $props()
+
+   const {
+      writeup,
+      readOnly = false,
+   }: {
+      /**
+       * The writeup to be displayed in the editor
+       */
+      writeup?: string
+      /**
+       * Whether the editor is read-only. Defaults to `false`
+       */
+      readOnly: boolean
+   } = $props()
    let element = $state<Element | undefined>(undefined)
    let editor = $state<Editor | undefined>(undefined)
 
    onMount(() => {
       editor = new Editor({
+         editable: !readOnly,
          element: element,
          extensions: [
             StarterKit.configure({

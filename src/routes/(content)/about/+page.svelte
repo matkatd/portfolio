@@ -10,9 +10,8 @@
       <TerminalText title="David Thompson">
          <p>My name is David!</p>
          <p>
-            I'm a software developer and photographer. I'm in the process of
-            getting my Bachelor's degree in Computer Science from Brigham Young
-            University.
+            I'm a software developer and photographer. I'm a Senior Computer
+            Science student at Brigham Young University.
          </p>
          <p>
             I've been programming in JavaScript, HTML, and CSS since 2017, and
@@ -30,7 +29,7 @@
                <li>
                   Actively participated in the development, maintenance, and
                   testing of websites for the BYU College of Life Sciences using
-                  Next.js, React, and C# (.NET).
+                  Next.js, React, and .NET.
                </li>
                <li>
                   Assisted in creating responsive web designs to ensure a
@@ -120,6 +119,7 @@
    }
    img {
       object-fit: contain;
+      max-width: 30vw;
       align-self: start;
       border-radius: 15px;
       margin: 3rem 1rem;

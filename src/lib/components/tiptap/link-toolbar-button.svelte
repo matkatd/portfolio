@@ -1,3 +1,7 @@
+<!-- 
+ @component
+ A toolbar button with extra functionality for the link tool.
+  -->
 <script lang="ts">
    import type { Editor } from '@tiptap/core'
    import ToolBarButton from './tool-bar-button.svelte'
