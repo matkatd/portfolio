@@ -1,0 +1,137 @@
+@import '@fontsource/ubuntu-mono';
+@import '@fontsource/ubuntu/400.css';
+@import '@fontsource/ubuntu/300.css';
+@import '@fontsource/ubuntu/500.css';
+
+:root {
+  --font-body: Ubuntu, Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: 'ubuntu Mono', monospace;
+  --color-bg-0: #546165;
+  --color-bg-1: hsl(209, 12%, 58%);
+  --color-bg-2: hsl(225, 18%, 82%);
+  --color-theme-1: #b2ecf7;
+  --color-theme-2: #1e3147;
+  --color-theme-2-hover: #305580;
+  --color-text: rgb(247, 244, 244);
+  --color-text-hover: #37a656;
+  --column-width: 42rem;
+  --column-margin-top: 4rem;
+  font-family: var(--font-body);
+  color: var(--color-text);
+}
+
+html {
+  box-sizing: border-box;
+}
+body {
+  font-size: calc(15px + 0.390625vw);
+  min-height: 100vh;
+  margin: 0 auto;
+  /* overflow-x: hidden; */
+  background-attachment: fixed;
+  background-color: var(--color-bg-1);
+  background-size: 100vw 100vh;
+  background-image: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(255, 255, 255, 0.75) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    linear-gradient(
+      180deg,
+      var(--color-bg-0) 0%,
+      var(--color-bg-1) 15%,
+      var(--color-bg-2) 50%
+    );
+}
+
+.page-content {
+  width: 80vw;
+}
+@media (max-width: 768px) {
+  .page-content {
+    width: 90vw;
+  }
+}
+
+/* Basic editor styles */
+.tiptap {
+  :first-child {
+    margin-top: 0;
+  }
+
+  @media (max-width: 768px) {
+    .tiptap {
+      width: 100vw;
+    }
+  }
+
+  pre {
+    background: var(--black);
+    border-radius: 0.5rem;
+    color: var(--white);
+    font-family: 'JetBrainsMono', monospace;
+    margin: 1.5rem 0;
+    padding: 0.75rem 1rem;
+
+    code {
+      background: none;
+      color: inherit;
+      font-size: 0.8rem;
+      padding: 0;
+    }
+
+    /* Code styling */
+    .hljs-comment,
+    .hljs-quote {
+      color: #616161;
+    }
+
+    .hljs-variable,
+    .hljs-template-variable,
+    .hljs-attribute,
+    .hljs-tag,
+    .hljs-name,
+    .hljs-regexp,
+    .hljs-link,
+    .hljs-name,
+    .hljs-selector-id,
+    .hljs-selector-class {
+      color: #f98181;
+    }
+
+    .hljs-number,
+    .hljs-meta,
+    .hljs-built_in,
+    .hljs-builtin-name,
+    .hljs-literal,
+    .hljs-type,
+    .hljs-params {
+      color: #fbbc88;
+    }
+
+    .hljs-string,
+    .hljs-symbol,
+    .hljs-bullet {
+      color: #b9f18d;
+    }
+
+    .hljs-title,
+    .hljs-section {
+      color: #faf594;
+    }
+
+    .hljs-keyword,
+    .hljs-selector-tag {
+      color: #70cff8;
+    }
+
+    .hljs-emphasis {
+      font-style: italic;
+    }
+
+    .hljs-strong {
+      font-weight: 700;
+    }
+  }
+}
