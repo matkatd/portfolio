@@ -61,11 +61,14 @@ This component is a wrapper around the Tiptap editor.
             Link.configure({
                protocols: ['mailto'],
             }),
-            CodeBlockLowlight.extend({
-               addNodeView() {
-                  return SvelteNodeViewRenderer(CodeBlockComponent)
-               },
-            }).configure({
+            // CodeBlockLowlight.extend({
+            //    addNodeView() {
+            //       return SvelteNodeViewRenderer(CodeBlockComponent)
+            //    },
+            // }).configure({
+            //    lowlight,
+            // }),
+            CodeBlockLowlight.configure({
                lowlight,
             }),
             Image,
