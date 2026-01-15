@@ -5,13 +5,12 @@ This component is a wrapper around the Tiptap editor.
  -->
 <script lang="ts">
    import { Editor } from '@tiptap/core'
-   import CodeBlock from '@tiptap/extension-code-block'
    import Color from '@tiptap/extension-color'
    import Image from '@tiptap/extension-image'
    import Link from '@tiptap/extension-link'
    import ListItem from '@tiptap/extension-list-item'
    import TextAlign from '@tiptap/extension-text-align'
-   import TextStyle from '@tiptap/extension-text-style'
+   import { TextStyle } from '@tiptap/extension-text-style'
    import StarterKit from '@tiptap/starter-kit'
    import { common, createLowlight } from 'lowlight'
    import { onDestroy, onMount } from 'svelte'

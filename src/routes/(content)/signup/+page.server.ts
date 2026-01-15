@@ -8,7 +8,7 @@ import { client } from '$lib/server/db.server.js'
 
 import type { PrismaClientKnownRequestError } from '@prisma/client/runtime/library'
 import { Prisma } from '../../../generated/prisma/client'
-import { auth } from '$lib/auth'
+import { auth } from '$lib/server/auth'
 
 const schema = object({
    email: string().email('Invalid email address').required('Email is required'),

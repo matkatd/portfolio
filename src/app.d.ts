@@ -1,6 +1,6 @@
 // See https://kit.svelte.dev/docs/types#app
 
-import type { Session } from '$lib/auth'
+import type { Session } from '$lib/server/auth'
 
 // for information about these interfaces
 declare global {

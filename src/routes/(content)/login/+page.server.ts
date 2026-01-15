@@ -1,4 +1,4 @@
-import { lucia } from '$lib/auth'
+import { lucia } from '$lib/server/auth'
 import { client } from '$lib/server/db.server'
 import { redirect, type Actions } from '@sveltejs/kit'
 import { fail, superValidate } from 'sveltekit-superforms'

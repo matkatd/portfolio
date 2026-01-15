@@ -22,7 +22,7 @@
       "prettier": "^3.8.0",
       "prettier-plugin-svelte": "^3.4.1",
       "prisma": "^6.19.2",
-      "svelte": "5.46.3",
+      "svelte": "5.46.4",
       "svelte-adapter-bun": "^1.0.1",
       "svelte-check": "^4.3.5",
       "svelte-highlight": "^7.9.0",
