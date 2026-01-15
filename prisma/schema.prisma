@@ -5,7 +5,8 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
 }
 
 datasource db {
@@ -14,21 +15,47 @@ datasource db {
 }
 
 model User {
-  id        String   @id @map("_id") 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  username  String   @unique
-  password  String
-  sessions Session[]
-  profile   Profile
+  id            String    @id @map("_id")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  username      String    @unique
+  password      String
+  sessions      Session[]
+  profile       Profile
+  name          String
+  email         String
+  emailVerified Boolean   @default(false)
+  image         String?
+  accounts      Account[]
+
+  displayUsername String?
+
+  role       String?
+  banned     Boolean?  @default(false)
+  banReason  String?
+  banExpires DateTime?
+
+  @@unique([email])
+  @@map("user")
 }
 
 model Session {
-  id        String   @id  @map("_id") 
-  userId    String   
+  id        String   @id @map("_id")
+  userId    String
   expiresAt DateTime
-  user User          @relation(references: [id], fields: [userId], onDelete: Cascade)
+  user      User     @relation(references: [id], fields: [userId], onDelete: Cascade)
 
+  token     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ipAddress String?
+  userAgent String?
+
+  impersonatedBy String?
+
+  @@unique([token])
+  @@index([userId])
+  @@map("session")
 }
 
 model Projects {
@@ -40,7 +67,7 @@ model Projects {
   img        String
   alt        String
   writeup    String[]
-  inProgress Boolean? 
+  inProgress Boolean?
 }
 
 model Photography {
@@ -54,4 +81,36 @@ model Photography {
 type Profile {
   firstName String
   lastName  String
+}
+
+model Account {
+  id                    String    @id @map("_id")
+  accountId             String
+  providerId            String
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  @@index([userId])
+  @@map("account")
+}
+
+model Verification {
+  id         String   @id @map("_id")
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([identifier])
+  @@map("verification")
 }

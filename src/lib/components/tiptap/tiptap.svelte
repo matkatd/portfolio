@@ -15,8 +15,6 @@ This component is a wrapper around the Tiptap editor.
    import StarterKit from '@tiptap/starter-kit'
    import { common, createLowlight } from 'lowlight'
    import { onDestroy, onMount } from 'svelte'
-   import { SvelteNodeViewRenderer } from 'svelte-tiptap'
-   import CodeBlockComponent from './code-block-component.svelte'
    import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight'
    import TiptapControls from './tiptap-controls.svelte'
    import Stack from '../stack.svelte'
@@ -61,13 +59,6 @@ This component is a wrapper around the Tiptap editor.
             Link.configure({
                protocols: ['mailto'],
             }),
-            // CodeBlockLowlight.extend({
-            //    addNodeView() {
-            //       return SvelteNodeViewRenderer(CodeBlockComponent)
-            //    },
-            // }).configure({
-            //    lowlight,
-            // }),
             CodeBlockLowlight.configure({
                lowlight,
             }),

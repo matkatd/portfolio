@@ -1,6 +1,7 @@
 <script lang="ts">
    import { env } from '$env/dynamic/public'
-   import type { Projects } from '@prisma/client'
+   import type { Projects } from '../../generated/prisma/client'
+
    import LinkButton from './link-button.svelte'
 
    let { project }: { project: Projects } = $props()
